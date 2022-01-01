@@ -17,12 +17,17 @@ const client = new Client({
     ],
 })
 
+const irc = new IRC(ip, nick)
+
 client.login(token)
 setTimeout(() => {
     client.guilds.cache.forEach(it => it.channels.fetch())
-}, 5000);
-
-const irc = new IRC(ip, nick)
+    client.channels.cache.forEach(channel => {
+        if (channel.topic) {
+            irc.join(channel.topic)
+        }
+    })
+}, 5000)
 
 irc.on('message', async function (from, to, message) {
     console.log(from + ' => ' + to + ': ' + message)
