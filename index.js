@@ -33,7 +33,7 @@ irc.on('message', async function (from, to, message) {
         }
         let hooks = (await channel.fetchWebhooks()).map(hook => hook)
         if (hooks.length === 0) {
-            hooks = [ await channel.createWebhook('IRC'), await channel.createWebhook('IRC'), await channel.createWebhook('IRC'), await channel.createWebhook('IRC') ]
+            hooks = [ await channel.createWebhook('IRC'), await channel.createWebhook('IRC') ]
         }
         let hook = hooks[++channel.webhook % hooks.length]
         hook.send({
