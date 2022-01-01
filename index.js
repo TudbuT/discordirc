@@ -48,7 +48,7 @@ client.on('messageCreate', async function (message) {
         return
     if (message.channel.type === 'GUILD_TEXT') {
         irc.join(message.channel.topic | ('#' + message.channel.name))
-        irc.say(message.channel.topic('#' + message.channel.name), message.content) 
+        irc.say(message.channel.topic | ('#' + message.channel.name), message.content) 
     }
 })
 
