@@ -47,8 +47,10 @@ client.on('messageCreate', async function (message) {
     if (message.webhookId)
         return
     if (message.channel.type === 'GUILD_TEXT') {
-        irc.join(message.channel.topic | ('#' + message.channel.name))
-        irc.say(message.channel.topic | ('#' + message.channel.name), message.content) 
+        let channel = message.channel.topic ? message.channel.topic : ('#' + message.channel.name)
+        console.log(channel + ' <= ' + message.content.split('\n').join('\n' + channel + ' <= '))
+        irc.join(channel)
+        irc.say(channel, message.content) 
     }
 })
 
