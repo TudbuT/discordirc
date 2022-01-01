@@ -50,7 +50,7 @@ client.on('messageCreate', async function (message) {
         let channel = message.channel.topic ? message.channel.topic : ('#' + message.channel.name)
         console.log(channel + ' <= ' + message.content.split('\n').join('\n' + channel + ' <= '))
         irc.join(channel)
-        irc.say(channel, message.content) 
+        irc.say(channel, message.cleanContent) 
     }
 })
 
