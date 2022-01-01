@@ -1,0 +1,29 @@
+{
+  "name": "discordirc",
+  "version": "1.0.0",
+  "description": "A Discord-IRC bridge",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tudbut/discordirc.git"
+  },
+  "keywords": [
+    "discord",
+    "irc",
+    "bridge",
+    "chat"
+  ],
+  "author": "TudbuT",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/tudbut/discordirc/issues"
+  },
+  "homepage": "https://github.com/tudbut/discordirc#readme",
+  "dependencies": {
+    "discord.js": "^13.5.0",
+    "irc": "^0.5.2"
+  }
+}
