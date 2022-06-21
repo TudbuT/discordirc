@@ -75,3 +75,6 @@ process.on('SIGINT', async function () {
     irc.send('QUIT', 'QUIT')
     setTimeout(process.exit, 500)
 })
+
+client.on('error', console.log);
+irc.on('error', console.log);
