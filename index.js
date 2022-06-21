@@ -64,7 +64,7 @@ client.on('messageCreate', async function (message) {
         if (bridge) {
             content = message.author.username + ': ' + content
         }
-        let channel = message.channel.topic ? message.channel.topic : ('#' + message.channel.name)
+        let channel = message.channel.topic ? message.channel.topic.split(' ')[0] : ('#' + message.channel.name)
         console.log(channel + ' <= ' + content.split('\n').join('\n' + channel + ' <= '))
         irc.join(channel)
         irc.say(channel, content) 
