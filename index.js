@@ -39,7 +39,7 @@ setTimeout(() => {
 
 irc.on('message', async function (from, to, message) {
     console.log(from + ' => ' + to + ': ' + message)
-    let channel = client.channels.cache.find(channel => ('#' + channel.name.toLowerCase()) === to || channel.topic === to)
+    let channel = client.channels.cache.find(channel => ('#' + channel.name.toLowerCase()) === to || channel.topic.split(' ')[0] === to)
     if (channel && channel.type === 'GUILD_TEXT') {
         if (!channel.webhook) {
             channel.webhook = 0
